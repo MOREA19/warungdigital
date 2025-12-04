@@ -1,0 +1,43 @@
+LANGKAH DEPLOY EDGE FUNCTION - COPY PASTE
+
+1. BUKA DASHBOARD SUPABASE
+   https://supabase.com/dashboard/project/etvwxarauhbutuxrjqpf/functions
+
+2. KLIK FUNCTION "server" DI LIST
+
+3. CLEAR SEMUA CODE (Ctrl+A, Delete)
+
+4. COPY CODE DARI FILE INI:
+   src/supabase/functions/server/index.tsx
+
+5. PASTE KE EDITOR SUPABASE
+
+6. KLIK TOMBOL "Deploy" DI BOTTOM RIGHT
+
+7. TUNGGU STATUS JADI "Active" (HIJAU)
+
+---
+
+SETELAH DEPLOY:
+
+npm run dev
+Buka http://localhost:3000
+Login admin@arkan.com / admin123
+Masuk Manajemen Pelanggan
+Seharusnya customers muncul!
+
+---
+
+JIKA MASIH TIDAK MUNCUL:
+- Buka DevTools (F12)
+- Tab Console
+- Copy-paste:
+
+const JWT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV0dnd4YXJhdWhidXR1eHJqcXBmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4OTk0MDIsImV4cCI6MjA3OTQ3NTQwMn0.CKqTVWWuPDm-E-3Gw1lSFOZQssuVj8aGjw3GvWgm634";
+fetch('https://etvwxarauhbutuxrjqpf.supabase.co/functions/v1/make-server-d6ea81e6/users', {
+  headers: {'Authorization': `Bearer ${JWT}`}
+}).then(r => r.json()).then(d => console.log(d));
+
+Jika keluar array dengan customers = OK
+Jika kosong = belum ada data
+Jika error = edge function belum deploy
