@@ -1,0 +1,16 @@
+Catatan : 
+Implementasi menggunakan TypeScript,sementara ilustrasi arsitektur di laporan menggunakan Laravel.
+Sistem tetap sesuai dengan perancangan.
+
+Terimakasih.
+
+
+login ke akun admin :
+admin@arkan.com 
+admin123
+
+login ke halaman pembeli bisa daftar terlebih dahulu atau dengan menggunakan akun ini :
+kevinsananjay1@gmail.com 
+Tasikmahgaya
+
+
